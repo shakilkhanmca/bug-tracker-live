@@ -31,7 +31,7 @@ A full-stack bug tracking application built with Spring Boot (Backend) and React
    ```sh
    mvn spring-boot:run
    ```
-   The backend will start on `http://localhost:8080`.
+   The backend will start on `https://bug-tracker-live.onrender.com`.
 
 ### Frontend
 1. Navigate to the frontend directory:
@@ -49,4 +49,4 @@ A full-stack bug tracking application built with Spring Boot (Backend) and React
    The frontend will start on `http://localhost:5173` (or 3000 depending on Vite config).
 
 ## API Documentation
-- Swagger UI is available at `http://localhost:8080/swagger-ui.html` when the backend is running.
+- Swagger UI is available at `https://bug-tracker-live.onrender.com/swagger-ui.html` when the backend is running.
