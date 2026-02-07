@@ -1,11 +1,13 @@
 import api from "./api";
 
-// LocalStorage से टोकन निकालने के लिए एक छोटा फंक्शन
+// LocalStorage से टोकन निकालने के लिए हेल्पर फंक्शन
 const getAuthHeader = () => {
   const user = JSON.parse(localStorage.getItem('user'));
-  if (user && user.accessToken) {
-    return { Authorization: 'Bearer ' + user.accessToken };
+  // आपके Local Storage में 'token' नाम की की (key) है, इसलिए यहाँ user.token लिखा है
+  if (user && user.token) {
+    return { Authorization: 'Bearer ' + user.token };
   } else {
+    console.warn("No token found in localStorage");
     return {};
   }
 };
