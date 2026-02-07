@@ -73,14 +73,13 @@ public class WebSecurityConfig {
     @Bean
     public org.springframework.web.cors.CorsConfigurationSource corsConfigurationSource() {
         org.springframework.web.cors.CorsConfiguration configuration = new org.springframework.web.cors.CorsConfiguration();
-
-        // ⚠️ Yahan humne aapka Vercel URL add kar diya hai
-        configuration.setAllowedOrigins(java.util.Arrays.asList(
-                "http://localhost:5173",
-                "http://localhost:3000",
-                "https://bug-tracker-live.vercel.app" // ✅ Ye line sabse zaruri hai
-        ));
-
+        
+configuration.setAllowedOriginPatterns(java.util.Arrays.asList(
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "https://*.vercel.app",  // 👈 इससे सारे Preview लिंक चल जाएंगे
+    "https://bug-tracker-live.vercel.app"
+));
         configuration.setAllowedMethods(java.util.Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD"));
         configuration.setAllowedHeaders(java.util.Arrays.asList("Origin", "Content-Type", "Accept", "Authorization", "X-Requested-With"));
         configuration.setAllowCredentials(true);
